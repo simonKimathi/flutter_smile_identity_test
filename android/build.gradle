@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral() // add the maven central repository
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath group: 'com.smileidentity', name: 'smile-id-android', version: '1.0.1'
+        classpath 'androidx.multidex:multidex:2.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral() // add the maven central repository
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
