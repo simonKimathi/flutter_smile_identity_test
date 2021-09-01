@@ -38,6 +38,12 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <!--id capture-->
+       <activity android:name="com.smileid.smileidui.SIDIDCaptureActivity" />
+       <!--selfie capture-->
+       <activity android:name="com.smileid.smileidui.SIDSelfieCaptureActivity" />
+       <!--selfie review screen-->
+       <activity android:name="com.smileid.smileidui.SIDReviewActivity" />
 
     </application>
 
