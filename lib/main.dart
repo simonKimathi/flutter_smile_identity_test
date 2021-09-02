@@ -107,8 +107,8 @@ class AppPage extends StatelessWidget {
             children: [
               OutlinedButton(
                   onPressed: () async {
-                    await SmileFlutter.captureSelfie("") ;
-                    // handleSelfieResult(context, result);
+                    var result = await SmileFlutter.captureSelfie("") ?? null;
+                    handleSelfieResult(context, result);
                   },
                   child: Text("Selfie Test")),
               OutlinedButton(
